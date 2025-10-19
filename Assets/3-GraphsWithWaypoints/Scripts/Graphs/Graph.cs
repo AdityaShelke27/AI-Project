@@ -26,6 +26,12 @@ public class Graph
     }
     public bool AStar(GameObject startID, GameObject endID)
     {
+        if(startID == endID)
+        {
+            pathList.Clear();
+            return false;
+        }
+
         Node start = FindNode(startID);
         Node end = FindNode(endID);
 
@@ -52,7 +58,7 @@ public class Graph
 
             if(thisNode == end)
             {
-                // ReconstructPath(start, end);
+                Reconstructpath(start, end);
                 return true;
             }
 
@@ -115,7 +121,6 @@ public class Graph
     {
         return nodeList.Find(p => p.GetID() == node);
     }
-
     float Distance(Node a, Node b)
     {
         return Vector3.SqrMagnitude(a.GetID().transform.position - b.GetID().transform.position);
@@ -134,5 +139,9 @@ public class Graph
         }
 
         return idx;
+    }
+    public List<Node> GetPathList()
+    {
+        return pathList;
     }
 }
