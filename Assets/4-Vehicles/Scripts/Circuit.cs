@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Circuit : MonoBehaviour
 {
-    [SerializeField] Transform[] m_WayPoints;
+    public Transform[] m_WayPoints;
 
     private void OnDrawGizmos()
     {
