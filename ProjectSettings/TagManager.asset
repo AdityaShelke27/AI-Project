@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 3
   tags:
   - car
+  - wp
+  - AI
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NotNav
   - Water
   - UI
   - 
